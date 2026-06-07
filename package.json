@@ -1,0 +1,22 @@
+{
+  "name": "visualvault-brand-kit-server",
+  "version": "2.0.0",
+  "description": "Post-purchase AI brand kit generator — Shopify × OpenAI × Canva × Resend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "preview": "open http://localhost:3000/preview?sector=beauty&style=elegant&brand=Luna+Studio"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
