@@ -32,17 +32,8 @@ const app  = express();
 const PORT = process.env.PORT || 3000;
 
 // ── CORS — autorise les appels depuis la boutique Shopify ─────────────────────
-const ALLOWED_ORIGINS = [
-  'https://visualvault-store.myshopify.com',
-  process.env.SHOPIFY_STORE_DOMAIN ? `https://${process.env.SHOPIFY_STORE_DOMAIN}` : null,
-  'http://localhost:3000',  // dev local
-].filter(Boolean);
-
 app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  if (origin && ALLOWED_ORIGINS.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.sendStatus(204);
